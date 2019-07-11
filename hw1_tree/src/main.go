@@ -99,7 +99,6 @@ func drawPaths(out io.Writer, pathForProcessing []string, fileMap map[string]*fi
 }
 
 func dirTree(out io.Writer, rootPath string, fullInfo bool) error {
-
 	pathForProcessing, fileMap, _ := fillPathsInfo(rootPath, fullInfo)
 	drawPaths(out, pathForProcessing, fileMap, fullInfo)
 	return nil
