@@ -87,10 +87,9 @@ func drawPaths(out io.Writer, pathForProcessing []string, fileMap map[string]*fi
 			previousMark = append(previousMark, innerDirMark)
 		}
 		if fullInfo && !fileInfo.FileInfo.IsDir() {
-			switch size := fileInfo.FileInfo.Size(); size {
-			case 0:
+			if size := fileInfo.FileInfo.Size(); size == 0 {
 				result += fmt.Sprintf(" %s", emptyMark)
-			default:
+			} else {
 				result += fmt.Sprintf(" (%db)", size)
 			}
 		}
