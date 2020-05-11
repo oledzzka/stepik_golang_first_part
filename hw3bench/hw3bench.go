@@ -80,6 +80,7 @@ func (v *userStruct) UnmarshalJSON(data []byte) error {
 	return r.Error()
 }
 
+// FastSearch exported
 func FastSearch(out io.Writer) {
 	file, err := os.Open(filePath)
 	if err != nil {
